@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+    font-family: 'Mulish', sans-serif;
+
+    --color-base-white: hsl(0, 0%, 100%);
+    --color-green-blue-700: hsl(195, 91%, 25%);
+    --color-green-blue-400: hsl(195, 46%, 40%);
+    --color-base-gray-900: hsl(240, 5%, 7%); 
+    --color-base-gray-700: hsl(240, 6%, 13%);
+    --color-base-gray-200: hsla(0, 0%, 100%, 0.2);
+
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    background-color: var(--color-base-white);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 2.55rem;
+    padding: 1.2rem 2.8rem;
+    background-color: var(--color-green-blue-700);
+}
+
+header form{
+    flex: 1;
+}
+
+.input-wrapper label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 1.2rem 1.6rem 1.2rem 1.4rem;
+
+    background-color: var(--color-base-gray-200);
+    border: 0;
+    border-radius: .4rem;
+
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-weight: 600;
+}
+
+input::placeholder {
+    color: var(--color-base-white);
+}
+
+.avatar {
+    width: 4.2rem;
+    height: 4.2rem;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+#black-cat {
+    width: 100%;
+    border-radius: 5;
+}
+
+main {
+    align-content: center;
+}
+
+main h1 {
+    max-width: 34.2rem;
+    line-height: 3.8rem;
+    margin: 3.1rem 6.6rem 0.8rem 2.6rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: var(--color-base-gray-700);
+}
+
+.like {
+    display: inline;
+    align-items: center;
+    width: 4.0rem;
+    height: 4.0rem;
+    margin: .8rem 1.2rem 3.1rem 2.6rem;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-green-blue-700);
+}
+
+.dislike {
+    display: inline;
+    align-items: center;
+    width: 4.0rem;
+    height: 4.0rem;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-green-blue-700);
+}
+
+main p {
+    width: 38.2rem;
+    height: 75.4rem;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    color: var(--color-base-gray-900);
+    margin: 0rem 2.6rem 3.4rem 2.6rem;
+}
+
+section {
+    width: 38.4rem;
+    height: 61.5rem;
+    margin: 0rem 2.4rem 3.9rem 2.2rem;
+}
+
+section h1 {
+    width: 23.8rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.84rem;
+    color: var(--color-base-gray-700);
+
+    margin-bottom: 3.2rem;
+}
+
+.item {
+    display: flex;
+    width: 38.2rem;
+    height: 8.4rem;
+    gap: 1.6rem;
+    margin-bottom: 3.2rem;
+}
+
+.item h2 {
+    width: 23.0rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.88rem;
+    color: var(--color-base-gray-700);
+}
+
+.item p {
+    width: 23.0rem;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.24rem;
+    color: var(--color-base-gray-900);
+}
+
+footer {
+    display: flex;
+    height: 6.4rem;
+    padding: 2.0rem 2.0rem 2.0rem 4.0rem;
+    background-color: var(--color-green-blue-400);
+    margin-top: 3.9rem;
+}
+
+footer p {
+    width: 39.8rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2.0rem;
+    text-align: center;
+    color: var(--color-base-white);
+}
+
+header {
+    --startY: -100%;
+    animation: move .2s;
+}
+
+footer {
+    --startY: 100%;
+    animation: move .2s;
+}
+
+.item {
+    --delay: .4s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes move {
+    from {
+        transform: translateY(var(--startY));
+    }
+}
+
+@media (min-width: 700px) {
+    #app {
+
+    display: grid;
+    
+    grid-template-areas: 
+    "A A A A"
+    "B B B C"
+    "B B B C"
+    "D D D D";
+    
+    gap: 3.4rem;
+
+    }
+
+    #app header {
+        grid-area: A;
+    }
+
+    #app main {
+        grid-area: B;
+    }
+
+    #app section {
+        grid-area: C;
+        margin-left: 3.4rem;
+    }
+
+    #app footer {
+        grid-area: D;
+    }
+
+    #black-cat {
+        margin: 4.4rem 0rem 0rem 3.2rem;
+        border-radius: 0.5%;
+    }
+
+    #titulo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .buttons {
+        margin-top: 3.2rem;
+    }
+
+    main p {
+        width: 80.0rem;
+        height: 36.4rem;
+    }
+
+    section {
+        margin-top: 4.4rem;
+    }
+
+    footer p {
+        margin-left: 40.00rem;
+    }
+
+}
+
